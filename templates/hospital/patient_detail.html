@@ -1,0 +1,59 @@
+{% extends 'hospital/base.html' %}
+
+
+{% block navbar %}
+{% block navbar2 %}
+    {{ block.super }}
+{% endblock %}
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container-fluid mt-3">
+      <div class="row">
+            <div class="col-lg-2">
+                {% block sidebar %}
+                     {{ block.super }}
+                 {% endblock %}
+            </div>
+
+             <div class="col-lg-10">
+                 <div class="card">
+                  <div class="card-body">
+                      <table class="table table-hover ">
+                          <tr class="bg-danger text-white">
+                              <th>Name</th>
+                              <th>Age</th>
+                              <th>Gender</th>
+                              <th>Contact</th>
+                              <th>Email</th>
+                              <th>City</th>
+                              <th>Address</th>
+                              <th>Admit Time</th>
+                              <th>Action</th>
+
+                          </tr>
+
+                         {% for x in patient %}
+                          <tr>
+                              <td>{{ x.name}}</td>
+                              <td>{{ x.age}}</td>
+                              <td>{{ x.gander}}</td>
+                              <td>{{ x.contact}}</td>
+                              <td>{{ x.email}}</td>
+                              <td>{{ x.city}}</td>
+                              <td>{{ x.address}}</td>
+                              <td>{{ x.date_time}}</td>
+                              <td><a href="{% url 'delete_patient' x.p_id %}" class="btn btn-primary btn-sm btn-outline-danger text-white">Delete</a></td>
+                          </tr>
+                          {% endfor %}
+                      </table>
+                  </div>
+              </div>
+             </div>
+      </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'hospital/base.html' %}
+
+{% block navbar %}
+{% block navbar1 %}
+    {{ block.super }}
+{% endblock %}
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="{%  static 'images (4).jpg' %}" class="d-block w-100" height="300px" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images (5).jpg' %}" class="d-block w-100" height="300px" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{%  static 'images (4).jpg' %}" class="d-block w-100" height="300px" alt="...">
+    </div>
+  </div>
+</div>
+
+
+ <div class="container-fluid mt-1 bg-primary">
+     <div class="col-lg-9 mx-auto">
+        <div class="card mb-3 bg-primary border-0 mx-auto" style="width: 70%;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="{% static 'h1.jpg' %}" class="card-img mt-4 shadow-sm" height="175px" alt="">
+                </div>
+                <div class="col-md-7 ml-3">
+                 <div class="card-body text-white">
+                 <h5 class="card-title">Welcome to Hospital <br>Management System.</h5>
+                     <p class="card-text mt-3">Lorem adipisicing elit. Maxime vitae ab recusandae, <br>Lorem adipisicing elit. Maxime vitae ab recusandae,<br>Lorem adipisicing elit. Maxime vitae ab recusandae.</p>
+                     <a href="#" class="btn btn-light btn-sm">Read more</a>
+                 </div>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
+
+
+<div class="container bg-white">
+        <div class="card  shadow-lg">
+            <div class="card-body">
+                <div class="row">
+                <div class="col-lg-6">
+                <h5 class="card-title">Hospital Management System</h5>
+                 <p class="card-text small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate minus blanditiis voluptatem praesentium exercitationem ad inventore vitae in ex officia veniam voluptatum quaerat earum, placeat perspiciatis, ducimus dolorum, commodi aperiam. <br><br>Lorem ipsum dolor sit amet, consectetur<br> adipisicing elit. Cupiditate minus blanditiis voluptatem<br> praesentium exercitationem ad inventore vitae in <br>ex officia veniam voluptatum quaerat earum, placeat<br> perspiciatis, ducimus dolorum, commodi aperiam.</p>
+                </div>
+
+                 <div class="col-lg-4">
+                    <img src="{% static 'h1.jpg' %}" alt="" class="ml-5" height="250" width="400">
+                 </div>
+            </div>
+                </div>
+
+    </div>
+       </div><br>
+
+
+
+<div class="container-fluid bg-dark">
+
+    <div class="container">
+    <div class="row mx-5 ml-lg-5">
+        <div class="col-lg-5 mx-auto ml-lg-5">
+            <h3 class="text-white ml-4 mt-2">Project Link</h3>
+             <a href="" class="ml-lg-5 mb-4">Home</a><br>
+             <a href="" class="ml-lg-5 mt-3">About</a><br>
+        </div>
+        <div class="col-lg-5 ml-lg-5 mx-auto ">
+             <h3 class="ml-4 mt-2 mb-2 text-white">Hospital Link</h3>
+             <a href="" class=" ml-5 mb-2">Login owner</a><br>
+             <a href="" class=" ml-3 mb-2 ml-5"> Hospital Registation </a>
+        </div>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}

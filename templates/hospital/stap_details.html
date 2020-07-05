@@ -1,0 +1,61 @@
+{% extends 'hospital/base.html' %}
+
+
+{% block navbar %}
+{% block navbar2 %}
+    {{ block.super }}
+{% endblock %}
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container-fluid mt-3">
+      <div class="row">
+                <div class="col-lg-2">
+                    {% block sidebar %}
+                     {{ block.super }}
+                     {% endblock %}
+                </div>
+
+          <div class="col-lg-10">
+              <div class="card">
+                  <div class="card-body">
+                      <table class="table table-hover ">
+                          <tr class="bg-danger text-white">
+                              <th>stap Image</th>
+                              <th>Name</th>
+                              <th>Degree</th>
+                              <th>Contact</th>
+                              <th>Category</th>
+                              <th>Email</th>
+                              <th>City</th>
+                              <th>Address</th>
+                              <th>Join Date</th>
+                              <th>Action</th>
+                          </tr>
+
+                         {% for x in stap %}
+                          <tr>
+                              <td><img src="{{ x.image.url }}" alt="" height="100" width="100" style="border-radius:100%"></td>
+                              <td>{{ x.name }}</td>
+                              <td>{{ x.degree }}</td>
+                              <td>{{ x.contact}}</td>
+                              <td>{{ x.category}}</td>
+                              <td>{{ x.email}}</td>
+                              <td>{{ x.city}}</td>
+                              <td>{{ x.address}}</td>
+                              <td>{{ x.data_time}}</td>
+                              <td><a href="{% url 'delete_stap' x.s_id %}" class="btn btn-primary btn-sm btn-outline-danger text-white">Delete</a></td>
+
+                          </tr>
+                          {% endfor %}
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+
+{% endblock %}

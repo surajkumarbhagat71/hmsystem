@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management system</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+</head>
+<body class="bg-light">
+
+{% block navbar %}
+
+{% block navbar1 %}
+
+   <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+  <a class="navbar-brand ml-5" href="{% url 'home' %}">Hospital Management <br> System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#col" aria-controls="col" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="col">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <p class="text-white mt-2">|</p>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}">About Project</a>
+      </li>
+
+        <p class="text-white mt-2">|</p>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'signup' %}" tabindex="-1">Hopital Registation</a>
+      </li>
+
+
+      <p class="text-white mt-2">|</p>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}" tabindex="-1">Admin Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+{% endblock %}
+
+    {% block navbar2 %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <a href="{% url 'home' %}" class="navbar-brand ml-3">Hospital Management system</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#col" aria-controls="col" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="col">
+            <ul class="navbar-nav ml-auto">
+
+
+            <li class="nav-item">
+                <a href="{% url 'logout' %}" class="btn btn-primary btn-danger btn-outline-primary mr-5">Logout</a>
+            </li>
+        </ul>
+        </div>
+
+    </nav>
+
+    {% endblock %}
+
+{% endblock %}
+
+
+
+{% block content %}
+    {% block sidebar %}
+<div class="list-group">
+     <a href="{% url 'add_patient' %}" class="list-group-item list-group-item-action active text-center text-center">Add Patient</a>
+     <a href="{% url 'add_doctor' %}" class="list-group-item list-group-item-action text-center">Add Doctor</a>
+     <a href="{% url 'add_stap' %}" class="list-group-item list-group-item-action text-center">Add stap</a>
+     <a href="{% url 'patient_detils' %}" class="list-group-item list-group-item-action text-center">Patient Details</a>
+     <a href="{% url 'doctor_details' %}" class="list-group-item list-group-item-action text-center">Doctor Details</a>
+     <a href="{% url 'stap_details' %}" class="list-group-item list-group-item-action text-center">Stap Details</a>
+     <a href="{% url 'logout' %}" class="list-group-item list-group-item-action text-center bg-danger text-white">Logout</a>
+</div>
+{% endblock %}
+ {% endblock %}
+
+</body>
+</html>

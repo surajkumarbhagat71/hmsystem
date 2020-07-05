@@ -1,0 +1,33 @@
+{% extends 'hospital/base.html' %}
+
+{% block navbar %}
+{% block navbar1 %}
+    {{ block.super }}
+{% endblock %}
+{% endblock %}
+
+
+{% block content %}
+    {% load static %}
+
+    <div class="container">
+    <div class="row mt-5">
+    <div class="col-lg-5 ml-5">
+        <h5 class="h5">About Project</h5>
+        <hr>
+        <p class="small text-primary">A Hospital Management System is an integrated information system for managing all aspects of a hospital’s operations such as medical, financial, administrative, legal, and compliance. It includes electronic health records, business intelligence, and revenue cycle management. <br><br> Hospitals and healthcare facilities improve the quality of healthcare services, reduce operating costs, and improve the revenue cycle by using such hospital management systems. Hospital Management System typically includes Outpatient and Inpatient Management, Pharmacy, Laboratory, Radiology, Inventory, eClaim, Mobile Apps, Tablet Versions, Online Scheduling, Secured Messaging, Doctor and Patient Portals, Accounting, HR/Payroll, Blood Bank, Mortuary, Alert Software, Dietary, Feedback, Lab Machines and Biometric Integration, HL7/Integrated PACS, and Business Intelligence.</p>
+    </div>
+    <div class="col-lg-3">
+        <img src="{% static 'h1.jpg' %}" class="rounded mt-5" alt="">
+    </div>
+    </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+{% endblock %}

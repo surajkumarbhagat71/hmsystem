@@ -1,0 +1,48 @@
+{% extends 'hospital/base.html' %}
+
+{% block navbar %}
+{% block navbar2 %}
+    {{ block.super }}
+{% endblock %}
+{% endblock %}
+
+
+{% block content %}
+    <div class="container mt-3">
+       <div class="row">
+           <div class="col-lg-3">
+                <div class="list-group">
+                 <a href="{% url 'add_patient' %}" class="list-group-item list-group-item-action active text-center text-center">Add Patient</a>
+                 <a href="{% url 'add_doctor' %}" class="list-group-item list-group-item-action text-center">Add Doctor</a>
+                 <a href="{% url 'add_stap' %}" class="list-group-item list-group-item-action text-center">Add stap</a>
+                 <a href="{% url 'patient_detils' %}" class="list-group-item list-group-item-action text-center">Patient Details</a>
+                 <a href="{% url 'doctor_details' %}" class="list-group-item list-group-item-action text-center">Doctor Details</a>
+                 <a href="{% url 'stap_details' %}" class="list-group-item list-group-item-action text-center">Stap Details</a>
+                 <a href="{% url 'logout' %}" class="list-group-item list-group-item-action text-center">Logout</a>
+            </div>
+           </div>
+
+           <div class="col-lg-6 ml-5">
+               <div class="card border-0 shadow-sm">
+                   <div class="card-header bg-secondary text-white text-center">Add Patient</div>
+
+                  <div class="card-body">
+                      <form action="{% url 'add_patient' %}" method="post">
+                          {% csrf_token %}
+
+                          <table class="table">
+                              {% load crispy_forms_tags %}
+                              {{ patient|crispy }}
+                          </table>
+                          <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block">
+                          </div>
+                      </form>
+                  </div>
+              </div>
+           </div>
+       </div>
+    </div>
+
+
+{% endblock %}
